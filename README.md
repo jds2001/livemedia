@@ -28,11 +28,12 @@ you want one of those, you'll need to use rhel-minimized.ks for that.
 The command to build these, once you have the kickstarts appropriately modified
 to point to local repos is:
 
-`livemedia-creator --project RHEL --releasever 8 --make-pxe-live --ks=pxe-rhel-minimized.ks --no-virt`
+`livemedia-creator --project RHEL --releasever 8 --make-pxe-live --ks=pxe-rhel-minimized.ks --no-virt --tmp=$(pwd)`
 
-and
+to make a bootable PXE image and
 
-` livemedia-creator --project RHEL --releasever 8 --make-iso --no-virt --ks=rhel-minimized.ks`
+`livemedia-creator --project RHEL --releasever 8 --make-iso --no-virt --ks=rhel-minimized.ks --tmp=$(pwd)A`
 
-to make a bootable ISO.
+to make a bootable ISO. Of course, replace the location of the tmpdir with
+whatever you like.
 
